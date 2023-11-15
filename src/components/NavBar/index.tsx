@@ -3,9 +3,8 @@ import styled from 'styled-components';
 const StyledNavBar = styled.div`
   display: flex;
   background-color: #e6e8e6;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
-  padding: 0 0 0 10;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -14,12 +13,12 @@ const StyledNavBar = styled.div`
 const StyledLogo = styled.div`
   background-position: 50% 50%;
   width: 15%;
-  height: 60%;
+  height: 70%;
   background-image: url('src/assets/logo.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   padding: 10px;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 3px 3px rgba(0, 0, 0, 0.2); */
 
   &:hover {
     cursor: pointer;
