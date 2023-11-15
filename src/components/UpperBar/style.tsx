@@ -9,5 +9,5 @@ const StyledBar = styled.div`
 `;
 
 export default function UpperBar() {
-  return <StyledBar>Free Shipping!!! Byte já encher o carrinho!!!</StyledBar>;
+  return <StyledBar>FREE SHIPPING!!! BYTE JÁ ENCHER O CARRINHO!!!</StyledBar>;
 }
