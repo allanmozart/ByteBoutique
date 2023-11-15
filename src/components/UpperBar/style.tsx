@@ -8,8 +8,6 @@ const StyledBar = styled.div`
   justify-content: center;
 `;
 
-function UpperBar() {
+export default function UpperBar() {
   return <StyledBar>Free Shipping!!! Byte já encher o carrinho!!!</StyledBar>;
 }
-
-export default UpperBar;
