@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import UpperBar from '../UpperBar/style';
 
 const StyledNavBar = styled.div`
   display: flex;
@@ -90,19 +91,22 @@ const CartLogo = styled.image`
 
 export default function NavBar() {
   return (
-    <StyledNavBar>
-      <StyledLogo />
-      <CategoriesContainer>
-        <CategoriesButton>Men's Clothing</CategoriesButton>
-        <CategoriesButton>Women's Clothing</CategoriesButton>
-        <CategoriesButton>Jewelry</CategoriesButton>
-        <CategoriesButton>Electronics</CategoriesButton>
-      </CategoriesContainer>
-      <RightSideContainer>
-        <ProductSearch placeholder='Search...' />
-        <UserLogo />
-        <CartLogo />
-      </RightSideContainer>
-    </StyledNavBar>
+    <>
+      <UpperBar />
+      <StyledNavBar>
+        <StyledLogo />
+        <CategoriesContainer>
+          <CategoriesButton>Men's Clothing</CategoriesButton>
+          <CategoriesButton>Women's Clothing</CategoriesButton>
+          <CategoriesButton>Jewelry</CategoriesButton>
+          <CategoriesButton>Electronics</CategoriesButton>
+        </CategoriesContainer>
+        <RightSideContainer>
+          <ProductSearch placeholder='Search...' />
+          <UserLogo />
+          <CartLogo />
+        </RightSideContainer>
+      </StyledNavBar>
+    </>
   );
 }

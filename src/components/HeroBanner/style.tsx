@@ -7,6 +7,12 @@ export const HeroContainer = styled.div`
   position: absolute;
   top: 50%;
 
+  /*
+   border: 1px solid blue;
+  width: 80%;
+  height: 45%;
+  margin: auto;
+  */
 `;
 
 export const ShopNowButton = styled.button`
@@ -17,11 +23,11 @@ export const ShopNowButton = styled.button`
   margin-bottom: 20px;
   margin-left: 20px;
 
-  background: #FDCA40;
+  background: #fdca40;
   border: none;
   color: black;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
@@ -35,9 +41,9 @@ export const DiscoverMoreButton = styled.button`
   border: none;
   background-color: transparent;
   color: black;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 
-export const HeroImage = styled.img``
+export const HeroImage = styled.img``;

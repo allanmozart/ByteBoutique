@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const invertColors = keyframes`
+    0% {
+      filter: invert(0%);
+    }
+    100% {
+      filter: invert(100%);
+    }
+    `;
 
 const StyledBar = styled.div`
   background-color: black;
@@ -6,6 +15,7 @@ const StyledBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  animation: ${invertColors} 0.5s infinite ease-in-out;
 `;
 
 export default function UpperBar() {

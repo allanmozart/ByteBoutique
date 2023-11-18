@@ -1,4 +1,4 @@
-import { FooterContainer } from './style';
+import { FooterContainer, GithubLink } from './style';
 
 export default function FooterBar() {
   return (
@@ -8,6 +8,8 @@ export default function FooterBar() {
       </div>
       <div>
         <h3>FOLLOW US</h3>
+        <GithubLink />
+        <GithubLink />
       </div>
     </FooterContainer>
   );
