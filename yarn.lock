@@ -1546,7 +1546,7 @@ react-router-dom@^6.19.0:
     "@remix-run/router" "1.12.0"
     react-router "6.19.0"
 
-react-router@6.19.0:
+react-router@6.19.0, react-router@^6.19.0:
   version "6.19.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.19.0.tgz#6d5062fa33495859daca98d86292ab03b037a9ca"
   integrity sha512-0W63PKCZ7+OuQd7Tm+RbkI8kCLmn4GPjDbX61tWljPxWgqTKlEpeQUwPkT1DRjYhF8KSihK0hQpmhU4uxVMcdw==
