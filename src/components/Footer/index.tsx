@@ -1,4 +1,4 @@
-import { FooterContainer, GithubLink } from './style';
+import { FooterContainer, GithubLink } from "./style";
 
 export default function FooterBar() {
   return (

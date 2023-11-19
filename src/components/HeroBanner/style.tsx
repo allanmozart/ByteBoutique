@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
-  width: 100vw;
-  height: auto;
-  border: 1px solid black;
-  position: absolute;
-  top: 50%;
+  /* border: 1px solid black; */
+  width: 80%;
+  height: 45%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
   /*
    border: 1px solid blue;
@@ -46,4 +48,6 @@ export const DiscoverMoreButton = styled.button`
   }
 `;
 
-export const HeroImage = styled.img``;
+export const HeroImage = styled.img`
+  max-height: 400px;
+`;

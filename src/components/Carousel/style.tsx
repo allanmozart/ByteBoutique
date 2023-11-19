@@ -6,7 +6,7 @@ export const CarouselContainer = styled.div`
   justify-content: space-around;
   max-width: 80%;
   margin: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 export const ProductContainer = styled.div`

@@ -1,9 +1,8 @@
-import UpperBar from '../UpperBar/style';
 import NavBar from '../NavBar';
 import FooterBar from '../Footer';
 import HeroBanner from '../HeroBanner';
 import Carousel from '../Carousel';
-import StyledLanding from './style';
+import { StyledLanding } from './style';
 
 function LandingPage() {
   return (

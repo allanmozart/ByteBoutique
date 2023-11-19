@@ -15,7 +15,7 @@ const StyledBar = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  animation: ${invertColors} 0.5s infinite ease-in-out;
+  /* animation: ${invertColors} 0.5s infinite ease-in-out; */
 `;
 
 export default function UpperBar() {
