@@ -4,6 +4,7 @@ import MensClothingDropdown from '../MensClothing';
 import WomensClothingDropdown from '../WomensClothing';
 import JeweleryDropdown from '../Jewelery';
 import ElectronicsDropdown from '../Eletronics';
+import ModalSignIn from '../ModalSignIn';
 
 const StyledNavBar = styled.div`
   display: flex;
@@ -63,20 +64,6 @@ const ProductSearch = styled.input`
   color: black;
 `;
 
-const UserLogo = styled.image`
-  background-position: 50% 50%;
-  width: 20%;
-  height: 80%;
-  background-image: url('src/assets/userlogo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 12px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 const CartLogo = styled.image`
   background-position: 50% 50%;
   width: 20%;
@@ -114,7 +101,7 @@ export default function NavBar() {
         </CategoriesContainer>
         <RightSideContainer>
           <ProductSearch placeholder='Search...' />
-          <UserLogo />
+          <ModalSignIn />
           <CartLogo />
         </RightSideContainer>
       </StyledNavBar>
