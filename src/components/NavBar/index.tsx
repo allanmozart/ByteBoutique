@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 import UpperBar from '../UpperBar/style';
+import MensClothingDropdown from '../MensClothing';
+import WomensClothingDropdown from '../WomensClothing';
+import JeweleryDropdown from '../Jewelery';
+import ElectronicsDropdown from '../Eletronics';
+import ModalSignIn from '../ModalSignIn';
 
 const StyledNavBar = styled.div`
   display: flex;
@@ -7,7 +12,7 @@ const StyledNavBar = styled.div`
   width: 100vw;
   height: 10vh;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 20px;
 `;
 
@@ -29,48 +34,34 @@ const StyledLogo = styled.div`
 const CategoriesContainer = styled.div`
   display: flex;
   gap: 10px;
+  width: 40%;
 `;
 
 const CategoriesButton = styled.button`
   border: none;
   background-color: transparent;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 
   &:hover {
     cursor: pointer;
     text-decoration: underline;
-    font-size: 19px;
   }
 `;
 
 const RightSideContainer = styled.div`
   display: flex;
   gap: 20px;
+  width: 20%;
 `;
 
 const ProductSearch = styled.input`
-  width: 200px;
+  min-width: 50%;
   height: 20px;
   background: white;
   border: 1px solid black;
   color: black;
-`;
-
-const UserLogo = styled.image`
-  background-position: 50% 50%;
-  width: 20%;
-  height: 80%;
-  background-image: url('src/assets/userlogo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 12px;
-  border: 1px solid black;
-  &:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-  }
 `;
 
 const CartLogo = styled.image`
@@ -82,10 +73,9 @@ const CartLogo = styled.image`
   background-repeat: no-repeat;
   padding: 12px;
   background-color: #e6e8e6;
-  border: 1px solid black;
+
   &:hover {
     cursor: pointer;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -96,14 +86,22 @@ export default function NavBar() {
       <StyledNavBar>
         <StyledLogo />
         <CategoriesContainer>
-          <CategoriesButton>Men's Clothing</CategoriesButton>
-          <CategoriesButton>Women's Clothing</CategoriesButton>
-          <CategoriesButton>Jewelry</CategoriesButton>
-          <CategoriesButton>Electronics</CategoriesButton>
+          <CategoriesButton>
+            <MensClothingDropdown />
+          </CategoriesButton>
+          <CategoriesButton>
+            <WomensClothingDropdown />
+          </CategoriesButton>
+          <CategoriesButton>
+            <JeweleryDropdown />
+          </CategoriesButton>
+          <CategoriesButton>
+            <ElectronicsDropdown />
+          </CategoriesButton>
         </CategoriesContainer>
         <RightSideContainer>
           <ProductSearch placeholder='Search...' />
-          <UserLogo />
+          <ModalSignIn />
           <CartLogo />
         </RightSideContainer>
       </StyledNavBar>

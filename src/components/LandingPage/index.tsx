@@ -1,4 +1,3 @@
-import UpperBar from '../UpperBar/style';
 import NavBar from '../NavBar';
 import FooterBar from '../Footer';
 import HeroBanner from '../HeroBanner';
