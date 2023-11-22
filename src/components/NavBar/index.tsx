@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import UpperBar from '../UpperBar/style';
-import MensClothingDropdown from '../MensClothing';
-import WomensClothingDropdown from '../WomensClothing';
-import JeweleryDropdown from '../Jewelery';
-import ElectronicsDropdown from '../Eletronics';
+import MensClothingDropdown from '../DropDowns/MensClothingDropDown';
+import WomensClothingDropdown from '../DropDowns/WomensClothingDropDown';
+import JeweleryDropdown from '../DropDowns/JeweleryDropDown';
+import ElectronicsDropdown from '../DropDowns/EletronicsDropDown';
 import ModalSignIn from '../ModalSignIn';
 
 const StyledNavBar = styled.div`

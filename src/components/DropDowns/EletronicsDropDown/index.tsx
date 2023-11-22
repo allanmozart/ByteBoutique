@@ -5,7 +5,7 @@ import {
   DropdownContainer,
   DropdownContent,
   DropdownItem,
-} from '../MensClothing/style';
+} from '../MensClothingDropDown/style';
 
 interface Product {
   id: number;
@@ -22,7 +22,7 @@ const ElectronicsDropdown: React.FC = () => {
         const response = await axios.get<Product[]>(
           'https://fakestoreapi.com/products/category/electronics'
         );
-        setItems(response.data.slice(0, 5));
+        setItems(response.data.slice(0, 4));
       } catch (error) {
         console.error('Error fetching data:', error);
       }

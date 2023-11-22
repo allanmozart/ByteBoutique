@@ -5,7 +5,7 @@ import {
   DropdownContainer,
   DropdownContent,
   DropdownItem,
-} from '../MensClothing/style';
+} from '../MensClothingDropDown/style';
 
 interface Product {
   id: number;

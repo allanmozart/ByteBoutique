@@ -1,7 +1,7 @@
-import NavBar from '../NavBar';
-import FooterBar from '../Footer';
-import HeroBanner from '../HeroBanner';
-import Carousel from '../Carousel';
+import NavBar from '../../components/NavBar';
+import FooterBar from '../../components/Footer';
+import HeroBanner from '../../components/HeroBanner';
+import Carousel from '../../components/Carousel';
 import StyledLanding from './style';
 
 function LandingPage() {
