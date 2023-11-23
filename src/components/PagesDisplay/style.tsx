@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const CarouselContainer = styled.div`
+export const DisplayContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 75%;
   align-items: center;
   justify-content: center;
-  border: 1px solid blue;
+  margin-bottom: 0px;
+
+  border: 1px solid red;
 `;

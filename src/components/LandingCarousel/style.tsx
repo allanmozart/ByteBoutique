@@ -56,8 +56,8 @@ export const ProductBox = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  width: 90%;
-  height: 90%;
+  width: 70%;
+  height: 70%;
   object-fit: scale-down;
   margin: auto;
 `;
@@ -65,4 +65,11 @@ export const ProductImage = styled.img`
 export const BlackFriday = styled.p`
   font-size: 0.8rem;
   margin: 4px 0;
+`;
+
+export const Route = styled.a`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;

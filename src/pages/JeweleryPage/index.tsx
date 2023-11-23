@@ -1,11 +1,17 @@
 import NavBar from '../../components/NavBar';
+import PagesCarousel from '../../components/PagesCarousel';
+import PagesDisplay from '../../components/PagesDisplay';
+import { Page } from '../style';
 
 function JeweleryPage() {
   return (
-    <div>
+    <>
       <NavBar />
-      JEWELERY
-    </div>
+      <Page>
+        <PagesCarousel />
+        <PagesDisplay />
+      </Page>
+    </>
   );
 }
 
