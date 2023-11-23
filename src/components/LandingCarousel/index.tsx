@@ -6,6 +6,7 @@ import {
   ProductBox,
   ProductImage,
   BlackFriday,
+  Route,
 } from './style';
 
 interface Product {
@@ -54,7 +55,7 @@ function Carousel() {
           const productIndex = (startIndex + index) % products.length;
           return (
             <ProductBox key={products[productIndex].id}>
-              <a
+              <Route
                 href={`/${products[productIndex].category
                   .split(' ')
                   .join('-')}`}
@@ -62,14 +63,15 @@ function Carousel() {
                 <ProductImage
                   src={products[productIndex].image}
                   alt={products[productIndex].title}
-                ></ProductImage>
-              </a>
+                />
+              </Route>
               <BlackFriday className='details'>
+                <h2>{products[productIndex].title}</h2>
                 <h5>
-                  Antes:
+                  Before:
                   <s> {(products[productIndex].price * 1.2).toFixed(2)}€</s>
                 </h5>
-                <h3>Agora: {products[productIndex].price}€</h3>
+                <h3>NOW ONLY: {products[productIndex].price}€</h3>
               </BlackFriday>
             </ProductBox>
           );
