@@ -13,6 +13,7 @@ interface Product {
   title: string;
   image: string;
   price: number;
+  category: string;
 }
 
 function Carousel() {
@@ -25,7 +26,7 @@ function Carousel() {
         const response = await axios.get<Product[]>(
           'https://fakestoreapi.com/products'
         );
-        console.log(response.data);
+
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -53,10 +54,16 @@ function Carousel() {
           const productIndex = (startIndex + index) % products.length;
           return (
             <ProductBox key={products[productIndex].id}>
-              <ProductImage
-                src={products[productIndex].image}
-                alt={products[productIndex].title}
-              />
+              <a
+                href={`/${products[productIndex].category
+                  .split(' ')
+                  .join('-')}`}
+              >
+                <ProductImage
+                  src={products[productIndex].image}
+                  alt={products[productIndex].title}
+                ></ProductImage>
+              </a>
               <BlackFriday className='details'>
                 <h5>
                   Antes:

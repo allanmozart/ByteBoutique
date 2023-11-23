@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<LandingPage />} />
-        <Route path='/men-clothing' element={<MensClothingPage />} />
-        <Route path='/women-clothing' element={<WomensClothingPage />} />
+        <Route path="/men's-clothing" element={<MensClothingPage />} />
+        <Route path="/women's-clothing" element={<WomensClothingPage />} />
         <Route path='/jewelery' element={<JeweleryPage />} />
         <Route path='/electronics' element={<ElectronicsPage />} />
       </Routes>

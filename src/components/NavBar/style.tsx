@@ -53,6 +53,7 @@ export const RightSideContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: #e6e8e6;
 `;
 
 export const CartLogo = styled.image`
@@ -63,7 +64,6 @@ export const CartLogo = styled.image`
   background-size: contain;
   background-repeat: no-repeat;
   padding: 12px;
-  background-color: #e6e8e6;
 
   &:hover {
     cursor: pointer;

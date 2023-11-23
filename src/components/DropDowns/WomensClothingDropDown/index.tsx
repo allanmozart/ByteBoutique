@@ -44,7 +44,7 @@ const WomensClothingDropdown: React.FC = () => {
             {item.title}
           </DropdownItem>
         ))}
-        <DropdownItem href='/women-clothing'>More...</DropdownItem>
+        <DropdownItem href="/women's-clothing">More...</DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );
