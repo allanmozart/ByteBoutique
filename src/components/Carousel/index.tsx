@@ -5,12 +5,14 @@ import {
   ProductContainer,
   ProductBox,
   ProductImage,
+  BlackFriday,
 } from './style';
 
 interface Product {
   id: number;
   title: string;
   image: string;
+  price: number;
 }
 
 function Carousel() {
@@ -23,6 +25,7 @@ function Carousel() {
         const response = await axios.get<Product[]>(
           'https://fakestoreapi.com/products'
         );
+        console.log(response.data);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -54,6 +57,13 @@ function Carousel() {
                 src={products[productIndex].image}
                 alt={products[productIndex].title}
               />
+              <BlackFriday className='details'>
+                <h5>
+                  Antes:
+                  <s> {(products[productIndex].price * 1.2).toFixed(2)}€</s>
+                </h5>
+                <h3>Agora: {products[productIndex].price}€</h3>
+              </BlackFriday>
             </ProductBox>
           );
         })}
