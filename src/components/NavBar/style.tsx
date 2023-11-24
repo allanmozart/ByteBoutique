@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledNavBar = styled.div`
@@ -30,7 +31,7 @@ export const CategoriesContainer = styled.div`
   gap: 10px;
 `;
 
-export const CategoriesButton = styled.button`
+export const CategoriesButton = styled(Link)`
   border: none;
   background-color: transparent;
   color: black;

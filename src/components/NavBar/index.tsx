@@ -1,4 +1,6 @@
+
 import UpperBar from "../UpperBar/style";
+
 import {
   StyledNavBar,
   StyledLogo,
@@ -15,12 +17,12 @@ export default function NavBar() {
     <>
       <UpperBar />
       <StyledNavBar>
-        <StyledLogo />
+          <StyledLogo />
         <CategoriesContainer>
-          <CategoriesButton>Men's Clothing</CategoriesButton>
-          <CategoriesButton>Women's Clothing</CategoriesButton>
-          <CategoriesButton>Jewelry</CategoriesButton>
-          <CategoriesButton>Electronics</CategoriesButton>
+          <CategoriesButton to="/electronics">Men's Clothing</CategoriesButton>
+          <CategoriesButton to="/electronics">Women's Clothing</CategoriesButton>
+          <CategoriesButton to="/electronics">Jewelry</CategoriesButton>
+          <CategoriesButton to="/electronics">Electronics</CategoriesButton>
         </CategoriesContainer>
         <RightSideContainer>
           <ProductSearch placeholder="Search..." />
