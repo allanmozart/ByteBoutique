@@ -5,7 +5,7 @@ import {
   signOut,
   Auth as FirebaseAuth,
 } from 'firebase/auth';
-import { auth, googleProvider } from '../../config/firebase.js';
+import { auth, googleProvider } from '../../config/firebase.ts';
 
 interface AuthProps {
   // Your component props, if any

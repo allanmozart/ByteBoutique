@@ -9,7 +9,7 @@ function LandingPage() {
     <StyledLanding>
       <NavBar />
       <HeroBanner />
-      <Carousel />
+      <Carousel autoScroll={false}/>
       <FooterBar />
     </StyledLanding>
   );
