@@ -5,12 +5,16 @@ import {
   ProductContainer,
   ProductBox,
   ProductImage,
-} from "./style";
+  BlackFriday,
+  Route,
+} from './style';
 
 interface Product {
   id: number;
   title: string;
   image: string;
+  price: number;
+  category: string;
 }
 
 function Carousel(props: { autoScroll?: boolean }) {
@@ -37,6 +41,7 @@ function Carousel(props: { autoScroll?: boolean }) {
         const response = await axios.get<Product[]>(
           "https://fakestoreapi.com/products"
         );
+
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -60,10 +65,24 @@ function Carousel(props: { autoScroll?: boolean }) {
           const productIndex = (startIndex + index) % products.length;
           return (
             <ProductBox key={products[productIndex].id}>
-              <ProductImage
-                src={products[productIndex].image}
-                alt={products[productIndex].title}
-              />
+              <Route
+                href={`/${products[productIndex].category
+                  .split(' ')
+                  .join('-')}`}
+              >
+                <ProductImage
+                  src={products[productIndex].image}
+                  alt={products[productIndex].title}
+                />
+              </Route>
+              <BlackFriday className='details'>
+                <h2>{products[productIndex].title}</h2>
+                <h5>
+                  Before:
+                  <s> {(products[productIndex].price * 1.2).toFixed(2)}€</s>
+                </h5>
+                <h3>NOW ONLY: {products[productIndex].price}€</h3>
+              </BlackFriday>
             </ProductBox>
           );
         })}

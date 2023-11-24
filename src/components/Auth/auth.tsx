@@ -5,11 +5,18 @@ import {
   signOut,
   Auth as FirebaseAuth,
 } from 'firebase/auth';
-import { auth, googleProvider } from '../../config/firebase.ts';
+import { auth, googleProvider } from '../../config/firebase.js';
+import {
+  AuthContainer,
+  GoogleSignInBtn,
+  GoogleSignInContainer,
+  Inputs,
+  LogoutBtn,
+  LogoutContainer,
+  SignInBtn,
+} from './style.js';
 
-interface AuthProps {
-  // Your component props, if any
-}
+interface AuthProps {}
 
 const Auth: React.FC<AuthProps> = () => {
   const [email, setEmail] = useState<string>('');
@@ -52,23 +59,33 @@ const Auth: React.FC<AuthProps> = () => {
   };
 
   return (
-    <div>
-      <input
-        placeholder='Email...'
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <input
-        placeholder='Password...'
-        type='password'
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <button onClick={signIn}>Sign In</button>
-      <button onClick={signInWithGoogle}>Sign In with Google</button>
-      <button onClick={logOut}>Logout</button>
-    </div>
+    <AuthContainer>
+      <Inputs>
+        <h3>Sign In</h3>
+        <input
+          style={{ backgroundColor: '#fefefe' }}
+          placeholder='Email...'
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <input
+          style={{ backgroundColor: '#fefefe' }}
+          placeholder='Password...'
+          type='password'
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <SignInBtn onClick={signIn}>Sign In</SignInBtn>
+      </Inputs>
+      <GoogleSignInContainer>
+        <GoogleSignInBtn onClick={signInWithGoogle}>
+          Sign In with Google
+        </GoogleSignInBtn>
+      </GoogleSignInContainer>
+      <LogoutContainer>
+        <LogoutBtn onClick={logOut}>Logout</LogoutBtn>
+      </LogoutContainer>
+    </AuthContainer>
   );
 };
-
 export default Auth;

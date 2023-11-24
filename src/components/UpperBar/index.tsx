@@ -2,20 +2,34 @@ import styled, { keyframes } from 'styled-components';
 
 const invertColors = keyframes`
     0% {
-      filter: invert(0%);
+      background-color: black;
+      color: white;
+    }
+    25% {
+      background-color: white;
+      color: black;
+    }
+    50%{
+      background-color: black;
+      color: white;
+      
+    }
+    75%{
+      background-color: white;
+      color: black;
     }
     100% {
-      filter: invert(100%);
+      background-color: red;
+      color: black;
     }
     `;
 
 const StyledBar = styled.div`
   background-color: black;
-  color: #e6e8e6;
   width: 100%;
   display: flex;
   justify-content: center;
-  /* animation: ${invertColors} 0.5s infinite ease-in-out; */
+  animation: ${invertColors} 0.8s infinite;
 `;
 
 export default function UpperBar() {
