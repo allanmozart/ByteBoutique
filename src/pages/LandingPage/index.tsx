@@ -8,7 +8,7 @@ import UpperBar from '../../components/UpperBar';
 function LandingPage() {
   return (
     <StyledLanding>
-      <UpperBar />
+      {/* <UpperBar /> */}
       <NavBar />
       <HeroBanner />
       <Carousel />
