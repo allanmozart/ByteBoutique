@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import {
   CarouselContainer,
   ProductContainer,
@@ -16,29 +16,39 @@ interface Product {
   category: string;
 }
 
-function Carousel() {
+function Carousel(props: { autoScroll?: boolean }) {
   const [products, setProducts] = useState<Product[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
+  };
+
+  useEffect(() => {
+    if (products === undefined || products.length === 0 || props.autoScroll === false) {
+      return;
+    }
+
+    setInterval(() => {
+      nextSlide();
+    }, 1000);
+  });
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get<Product[]>(
-          'https://fakestoreapi.com/products'
+          "https://fakestoreapi.com/products"
         );
 
         setProducts(response.data);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       }
     };
 
     fetchProducts();
   }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-  };
 
   const prevSlide = () => {
     setCurrentIndex(
@@ -76,23 +86,23 @@ function Carousel() {
       <button
         onClick={prevSlide}
         style={{
-          backgroundColor: '#fefefe',
-          border: 'none',
-          cursor: 'pointer',
+          backgroundColor: "#fefefe",
+          border: "none",
+          cursor: "pointer",
         }}
       >
-        <img src='src/assets/arrow_left.png' alt='' />
+        <img src="src/assets/arrow_left.png" alt="" />
       </button>
       {products.length > 0 && renderProducts()}
       <button
         onClick={nextSlide}
         style={{
-          backgroundColor: '#fefefe',
-          border: 'none',
-          cursor: 'pointer',
+          backgroundColor: "#fefefe",
+          border: "none",
+          cursor: "pointer",
         }}
       >
-        <img src='src/assets/arrow_right.png' alt='' />
+        <img src="src/assets/arrow_right.png" alt="" />
       </button>
     </CarouselContainer>
   );
