@@ -33,7 +33,7 @@ function Carousel(props: { autoScroll?: boolean }) {
     setInterval(() => {
       nextSlide();
     }, 1000);
-  }, []);
+  });
 
   useEffect(() => {
     const fetchProducts = async () => {
