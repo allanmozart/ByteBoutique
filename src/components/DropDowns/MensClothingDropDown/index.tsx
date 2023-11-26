@@ -40,7 +40,7 @@ const MensClothingDropdown: React.FC = () => {
       <Button onClick={toggleDropdown}>Men's Clothing</Button>
       <DropdownContent isVisible={isDropdownVisible}>
         {items.map((item) => (
-          <DropdownItem key={item.id} href={`#product-${item.id}`}>
+          <DropdownItem key={item.id} href={`men's-clothing/${item.id}`}>
             {item.title}
           </DropdownItem>
         ))}

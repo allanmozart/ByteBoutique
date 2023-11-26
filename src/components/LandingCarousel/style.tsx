@@ -29,30 +29,6 @@ export const ProductBox = styled.div`
   &:hover {
     border: 1px solid #e6e8e6;
   }
-
-  .details {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.2s;
-  }
-
-  &:hover .details {
-    width: 20%;
-    background-color: #e6e8e6;
-    color: black;
-    opacity: 1;
-  }
 `;
 
 export const ProductImage = styled.img`
@@ -60,11 +36,6 @@ export const ProductImage = styled.img`
   height: 70%;
   object-fit: scale-down;
   margin: auto;
-`;
-
-export const BlackFriday = styled.p`
-  font-size: 0.8rem;
-  margin: 4px 0;
 `;
 
 export const Route = styled.a`

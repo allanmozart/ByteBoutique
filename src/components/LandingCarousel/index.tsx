@@ -5,7 +5,6 @@ import {
   ProductContainer,
   ProductBox,
   ProductImage,
-  BlackFriday,
   Route,
 } from './style';
 
@@ -68,21 +67,13 @@ function Carousel(props: { autoScroll?: boolean }) {
               <Route
                 href={`/${products[productIndex].category
                   .split(' ')
-                  .join('-')}`}
+                  .join('-')}/${products[productIndex].id}`}
               >
                 <ProductImage
                   src={products[productIndex].image}
                   alt={products[productIndex].title}
                 />
               </Route>
-              <BlackFriday className='details'>
-                <h2>{products[productIndex].title}</h2>
-                <h5>
-                  Before:
-                  <s> {(products[productIndex].price * 1.2).toFixed(2)}€</s>
-                </h5>
-                <h3>NOW ONLY: {products[productIndex].price}€</h3>
-              </BlackFriday>
             </ProductBox>
           );
         })}
