@@ -17,7 +17,7 @@ export const getProductImage = async (id: string) => {
 
   try {
     const response = await axios.request(config);
-    return response.data.image;
+    return response.data;
   } catch (error) {
     console.error(error);
   }

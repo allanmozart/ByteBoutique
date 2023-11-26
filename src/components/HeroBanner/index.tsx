@@ -13,7 +13,7 @@ export default function HeroBanner() {
   useEffect(() => {
     const fetchImages = async () => {
       const imageResponse = await getProductImage("14");
-      setImageURL(imageResponse);
+      setImageURL(imageResponse.image);
     };
     fetchImages();
   }, []);
@@ -22,8 +22,8 @@ export default function HeroBanner() {
     <HeroContainer>
       <div>
         <h1 style={{ margin: "20px" }}>Buy the best in tech</h1>
-        <ShopNowButton>Shop Now</ShopNowButton>
-        <DiscoverMoreButton>Discover More</DiscoverMoreButton>
+        <ShopNowButton to="/electronics">Shop Now</ShopNowButton>
+        <DiscoverMoreButton to="/electronics">Discover More</DiscoverMoreButton>
       </div>
       <HeroImage src={imageURL}/>
     </HeroContainer>

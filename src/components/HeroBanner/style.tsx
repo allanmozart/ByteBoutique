@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
@@ -16,13 +17,14 @@ export const HeroContainer = styled.div`
   */
 `;
 
-export const ShopNowButton = styled.button`
+export const ShopNowButton = styled(Link)`
   display: inline-flex;
   padding: 13px 49px;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   margin-left: 20px;
+  text-decoration: none;
 
   background: #fdca40;
   border: none;
@@ -33,7 +35,7 @@ export const ShopNowButton = styled.button`
   }
 `;
 
-export const DiscoverMoreButton = styled.button`
+export const DiscoverMoreButton = styled(Link)`
   display: inline-flex;
   padding: 13px 49px;
   /* margin-left: 20px; */
@@ -42,6 +44,7 @@ export const DiscoverMoreButton = styled.button`
   border: none;
   background-color: transparent;
   color: black;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
