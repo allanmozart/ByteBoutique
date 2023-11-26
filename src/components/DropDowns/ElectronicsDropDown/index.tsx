@@ -5,14 +5,14 @@ import {
   DropdownContainer,
   DropdownContent,
   DropdownItem,
-} from '../MensClothing/style';
+} from '../MensClothingDropDown/style';
 
 interface Product {
   id: number;
   title: string;
 }
 
-const WomensClothingDropdown: React.FC = () => {
+const ElectronicsDropdown: React.FC = () => {
   const [items, setItems] = useState<Product[]>([]);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -20,9 +20,9 @@ const WomensClothingDropdown: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get<Product[]>(
-          "https://fakestoreapi.com/products/category/women's clothing"
+          'https://fakestoreapi.com/products/category/electronics'
         );
-        setItems(response.data.slice(0, 5));
+        setItems(response.data.slice(0, 4));
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -37,17 +37,17 @@ const WomensClothingDropdown: React.FC = () => {
 
   return (
     <DropdownContainer>
-      <Button onClick={toggleDropdown}>Women's Clothing</Button>
+      <Button onClick={toggleDropdown}>Electronics</Button>
       <DropdownContent isVisible={isDropdownVisible}>
         {items.map((item) => (
-          <DropdownItem key={item.id} href={`#product-${item.id}`}>
+          <DropdownItem key={item.id} href={`/electronics/${item.id}`}>
             {item.title}
           </DropdownItem>
         ))}
-        <DropdownItem href='/women-clothing'>More...</DropdownItem>
+        <DropdownItem href='/electronics'>More...</DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );
 };
 
-export default WomensClothingDropdown;
+export default ElectronicsDropdown;

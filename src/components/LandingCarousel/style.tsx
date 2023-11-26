@@ -6,7 +6,6 @@ export const CarouselContainer = styled.div`
   justify-content: space-around;
   max-width: 80%;
   margin: auto;
-  border: 1px solid red;
 `;
 
 export const ProductContainer = styled.div`
@@ -18,17 +17,30 @@ export const ProductContainer = styled.div`
 
 export const ProductBox = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 15vw;
   height: 20vh;
   overflow: hidden;
   border: none;
   cursor: pointer;
   margin: auto;
+
+  &:hover {
+    border: 1px solid #e6e8e6;
+  }
 `;
 
 export const ProductImage = styled.img`
-  width: 90%;
-  height: 90%;
+  width: 70%;
+  height: 70%;
   object-fit: scale-down;
   margin: auto;
+`;
+
+export const Route = styled.a`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 `;

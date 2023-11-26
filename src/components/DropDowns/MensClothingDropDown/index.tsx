@@ -5,14 +5,14 @@ import {
   DropdownContainer,
   DropdownContent,
   DropdownItem,
-} from '../MensClothing/style';
+} from './style';
 
 interface Product {
   id: number;
   title: string;
 }
 
-const JeweleryDropdown: React.FC = () => {
+const MensClothingDropdown: React.FC = () => {
   const [items, setItems] = useState<Product[]>([]);
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
@@ -20,7 +20,7 @@ const JeweleryDropdown: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get<Product[]>(
-          'https://fakestoreapi.com/products/category/jewelery'
+          "https://fakestoreapi.com/products/category/men's clothing"
         );
         setItems(response.data.slice(0, 5));
       } catch (error) {
@@ -37,17 +37,17 @@ const JeweleryDropdown: React.FC = () => {
 
   return (
     <DropdownContainer>
-      <Button onClick={toggleDropdown}>Jewelery</Button>
+      <Button onClick={toggleDropdown}>Men's Clothing</Button>
       <DropdownContent isVisible={isDropdownVisible}>
         {items.map((item) => (
-          <DropdownItem key={item.id} href={`#product-${item.id}`}>
+          <DropdownItem key={item.id} href={`men's-clothing/${item.id}`}>
             {item.title}
           </DropdownItem>
         ))}
-        <DropdownItem href='/jewelery'>More...</DropdownItem>
+        <DropdownItem href="/men's-clothing">More...</DropdownItem>
       </DropdownContent>
     </DropdownContainer>
   );
 };
 
-export default JeweleryDropdown;
+export default MensClothingDropdown;

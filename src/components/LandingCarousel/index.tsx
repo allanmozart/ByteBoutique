@@ -5,12 +5,15 @@ import {
   ProductContainer,
   ProductBox,
   ProductImage,
+  Route,
 } from './style';
 
 interface Product {
   id: number;
   title: string;
   image: string;
+  price: number;
+  category: string;
 }
 
 function Carousel() {
@@ -23,6 +26,7 @@ function Carousel() {
         const response = await axios.get<Product[]>(
           'https://fakestoreapi.com/products'
         );
+
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -50,10 +54,16 @@ function Carousel() {
           const productIndex = (startIndex + index) % products.length;
           return (
             <ProductBox key={products[productIndex].id}>
-              <ProductImage
-                src={products[productIndex].image}
-                alt={products[productIndex].title}
-              />
+              <Route
+                href={`/${products[productIndex].category
+                  .split(' ')
+                  .join('-')}/${products[productIndex].id}`}
+              >
+                <ProductImage
+                  src={products[productIndex].image}
+                  alt={products[productIndex].title}
+                />
+              </Route>
             </ProductBox>
           );
         })}
