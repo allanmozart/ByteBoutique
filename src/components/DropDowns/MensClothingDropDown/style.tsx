@@ -35,6 +35,6 @@ export const DropdownItem = styled.a`
   display: block;
 
   &:hover {
-    background-color: #e6e8e6;
+    background-color: #fdca40;
   }
 `;

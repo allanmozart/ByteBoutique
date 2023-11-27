@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   CarouselContainer,
   ProductContainer,
@@ -25,7 +25,11 @@ function Carousel(props: { autoScroll?: boolean }) {
   };
 
   useEffect(() => {
-    if (products === undefined || products.length === 0 || props.autoScroll === false) {
+    if (
+      products === undefined ||
+      products.length === 0 ||
+      props.autoScroll === false
+    ) {
       return;
     }
 
@@ -38,12 +42,12 @@ function Carousel(props: { autoScroll?: boolean }) {
     const fetchProducts = async () => {
       try {
         const response = await axios.get<Product[]>(
-          "https://fakestoreapi.com/products"
+          'https://fakestoreapi.com/products'
         );
 
         setProducts(response.data);
       } catch (error) {
-        console.error("Error fetching products:", error);
+        console.error('Error fetching products:', error);
       }
     };
 
@@ -86,23 +90,23 @@ function Carousel(props: { autoScroll?: boolean }) {
       <button
         onClick={prevSlide}
         style={{
-          backgroundColor: "#fefefe",
-          border: "none",
-          cursor: "pointer",
+          backgroundColor: '#fefefe',
+          border: 'none',
+          cursor: 'pointer',
         }}
       >
-        <img src="src/assets/arrow_left.png" alt="" />
+        <img src='src/assets/arrow_left.png' alt='' />
       </button>
       {products.length > 0 && renderProducts()}
       <button
         onClick={nextSlide}
         style={{
-          backgroundColor: "#fefefe",
-          border: "none",
-          cursor: "pointer",
+          backgroundColor: '#fefefe',
+          border: 'none',
+          cursor: 'pointer',
         }}
       >
-        <img src="src/assets/arrow_right.png" alt="" />
+        <img src='src/assets/arrow_right.png' alt='' />
       </button>
     </CarouselContainer>
   );
