@@ -22,5 +22,4 @@ export const Container = styled.div`
 export const Filter = styled.div`
   width: 10%;
   height: 80%;
-  border: 1px solid red;
 `;

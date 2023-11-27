@@ -8,5 +8,50 @@ export const CardsContainer = styled.div`
   width: 80%;
   height: 80%;
   gap: 10px;
-  border: 1px solid green;
+  overflow-y: auto;
+`;
+
+export const Card = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 400px;
+  margin: 10px 0;
+  padding: 5px;
+`;
+
+export const CardTitle = styled.h4`
+  width: 100%;
+`;
+
+export const ImgCard = styled.img`
+  width: 70%;
+  height: 70%;
+  object-fit: scale-down;
+  margin: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Price = styled.h5``;
+
+export const AddToCart = styled.button`
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #fdca40;
+  border: none;
+  color: black;
+  width: 50%;
+  height: 8%;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
