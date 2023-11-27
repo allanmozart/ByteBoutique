@@ -5,7 +5,7 @@ export const Display = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 0px;
 `;
 
@@ -19,7 +19,6 @@ export const Container = styled.div`
   gap: 10px;
 `;
 
-export const Filter = styled.div`
+export const Filter = styled.button`
   width: 10%;
-  height: 80%;
 `;

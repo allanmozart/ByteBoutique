@@ -7,7 +7,7 @@ function PagesDisplay() {
     <Display>
       <Title />
       <Container>
-        <Filter />
+        <Filter>Filter/Sort By...</Filter>
         <ProductCard />
       </Container>
     </Display>

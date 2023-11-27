@@ -6,7 +6,7 @@ export const CardsContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 80%;
-  height: 80%;
+  height: 70%;
   gap: 10px;
   overflow-y: auto;
 `;
