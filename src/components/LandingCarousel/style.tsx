@@ -27,7 +27,7 @@ export const ProductBox = styled.div`
   margin: auto;
 
   &:hover {
-    border: 1px solid #e6e8e6;
+    border: 1px solid #fdca40;
   }
 `;
 

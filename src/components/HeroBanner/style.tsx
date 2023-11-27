@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
   width: 80%;
@@ -25,7 +25,7 @@ export const ShopNowButton = styled(Link)`
   margin-bottom: 20px;
   margin-left: 20px;
   text-decoration: none;
-
+  border-radius: 5px;
   background: #fdca40;
   border: none;
   color: black;

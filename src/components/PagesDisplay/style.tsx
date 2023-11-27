@@ -1,12 +1,24 @@
 import styled from 'styled-components';
 
-export const DisplayContainer = styled.div`
+export const Display = styled.div`
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0px;
+  gap: 10px;
+`;
 
-  border: 1px solid red;
+export const Filter = styled.button`
+  width: 10%;
 `;
