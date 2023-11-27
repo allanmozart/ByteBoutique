@@ -11,25 +11,38 @@ import {
   StyledLogo,
   StyledNavBar,
 } from './style';
+import { useEffect, useState } from 'react';
+import { getAllCategories } from '../../api/API_PATH';
+
+interface Product {
+  id: number;
+  title: string;
+}
 
 export default function NavBar() {
+  const [items, setItems] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setItems(await getAllCategories());
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <StyledNavBar>
         <StyledLogo href='/' />
         <CategoriesContainer>
+          {/* {items.map((item) => ( */}
           <CategoriesButton>
+            {/* {items} */}
             <MensClothingDropdown />
-          </CategoriesButton>
-          <CategoriesButton>
             <WomensClothingDropdown />
-          </CategoriesButton>
-          <CategoriesButton>
             <JeweleryDropdown />
-          </CategoriesButton>
-          <CategoriesButton>
             <ElectronicsDropdown />
           </CategoriesButton>
+          {/* ))} */}
         </CategoriesContainer>
         <RightSideContainer>
           <ModalSignIn />

@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
-import Cards from '../Card';
-import { CardsContainer } from './style';
-import axios from 'axios';
+import { CardsContainer, AddToCart, Card, ImgCard, Price } from './style';
+import { getCategoryProducts } from '../../api/API_PATH';
 
 interface Product {
   id: number;
   title: string;
+  price: string;
+  image: string;
 }
 
 function ProductCard() {
   const [items, setItems] = useState<Product[]>([]);
 
   useEffect(() => {
+    const name = location.pathname.split('/').filter(Boolean).pop();
     const fetchData = async () => {
-      try {
-        const response = await axios.get<Product[]>(
-          'https://fakestoreapi.com/products/category/'
-        );
-        setItems(response.data.slice(0, 5));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      setItems(await getCategoryProducts(name.split('-').join(' ')));
     };
 
     fetchData();
@@ -28,7 +23,14 @@ function ProductCard() {
 
   return (
     <CardsContainer>
-      <Cards />
+      {items.map((item) => (
+        <Card key={item.id}>
+          {/* <CardTitle>{item.title}</CardTitle> */}
+          <ImgCard src={item.image} alt={item.image} />
+          <Price>{item.price}€</Price>
+          <AddToCart>Add To Cart</AddToCart>
+        </Card>
+      ))}
     </CardsContainer>
   );
 }
