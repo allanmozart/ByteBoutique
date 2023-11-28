@@ -68,11 +68,7 @@ function Carousel(props: { autoScroll?: boolean }) {
           const productIndex = (startIndex + index) % products.length;
           return (
             <ProductBox key={products[productIndex].id}>
-              <Route
-                href={`/${products[productIndex].category
-                  .split(' ')
-                  .join('-')}/${products[productIndex].id}`}
-              >
+              <Route href={`/product/${products[productIndex].id}`}>
                 <ProductImage
                   src={products[productIndex].image}
                   alt={products[productIndex].title}
