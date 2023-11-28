@@ -31,7 +31,22 @@ export async function getAllCategories() {
   }
 }
 
-export const getProduct = async (id: number) => {
+export const getProduct = async (id: string) => {
+  const config = {
+    method: 'get',
+    url: `${BASE_URL}${PATH.products}/${id}`,
+    headers: {},
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getProductImage = async (id: string) => {
   const config = {
     method: 'get',
     url: `${BASE_URL}${PATH.products}/${id}`,

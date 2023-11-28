@@ -5,7 +5,7 @@ import {
   HeroImage,
   ShopNowButton,
 } from "./style";
-import { getProductImage } from "../../api";
+import { getProductImage } from "../../api/API_PATH";
 
 export default function HeroBanner() {
   const [imageURL, setImageURL] = useState("");

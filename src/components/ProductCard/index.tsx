@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CardsContainer, AddToCart, Card, ImgCard, Price } from './style';
 import { getCategoryProducts } from '../../api/API_PATH';
+import { Link } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -24,12 +25,14 @@ function ProductCard() {
   return (
     <CardsContainer>
       {items.map((item) => (
+        <Link to={`/product/${item.id}`}>
         <Card key={item.id}>
           {/* <CardTitle>{item.title}</CardTitle> */}
           <ImgCard src={item.image} alt={item.image} />
           <Price>{item.price}€</Price>
           <AddToCart>Add To Cart</AddToCart>
         </Card>
+        </Link>
       ))}
     </CardsContainer>
   );

@@ -4,6 +4,7 @@ import MensClothingPage from './pages/MensClothing';
 import WomensClothingPage from './pages/WomensClothing';
 import JeweleryPage from './pages/JeweleryPage';
 import ElectronicsPage from './pages/ElectronicsPage';
+import ProductDescriptionPage from './pages/Product-Details-Page';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/women's-clothing" element={<WomensClothingPage />} />
         <Route path='/jewelery' element={<JeweleryPage />} />
         <Route path='/electronics' element={<ElectronicsPage />} />
+        <Route path="/product/:id" element={<ProductDescriptionPage />} />
       </Routes>
     </Router>
   );
