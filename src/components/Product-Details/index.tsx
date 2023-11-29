@@ -22,7 +22,7 @@ function ProductDetailsDisplay() {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      setProduct(await getProduct("1"));
+      setProduct(await getProduct("18"));
       console.log("product", product);
     };
     fetchProduct();
