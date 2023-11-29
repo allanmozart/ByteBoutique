@@ -1,4 +1,4 @@
-import { FooterContainer, GithubLink } from "./style";
+import { FooterContainer, GithubLink } from './style';
 
 export default function FooterBar() {
   return (
@@ -9,16 +9,16 @@ export default function FooterBar() {
       <div>
         <h3>FOLLOW US</h3>
         <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/allanmozart"
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://github.com/allanmozart'
         >
           <GithubLink />
         </a>
         <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/FCarvalhal"
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://github.com/FCarvalhal'
         >
           <GithubLink />
         </a>
