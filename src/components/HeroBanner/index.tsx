@@ -5,14 +5,14 @@ import {
   HeroImage,
   ShopNowButton,
 } from "./style";
-import { getProductImage } from "../../api";
+import { getProduct } from "../../api/API_PATH";
 
 export default function HeroBanner() {
   const [imageURL, setImageURL] = useState("");
 
   useEffect(() => {
     const fetchImages = async () => {
-      const imageResponse = await getProductImage("14");
+      const imageResponse = await getProduct("14");
       setImageURL(imageResponse.image);
     };
     fetchImages();

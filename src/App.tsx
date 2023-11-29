@@ -6,6 +6,7 @@ import JeweleryPage from './pages/JeweleryPage';
 import ElectronicsPage from './pages/ElectronicsPage';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import ProductDescriptionPage from './pages/Product-Details-Page';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/women's-clothing" element={<WomensClothingPage />} />
           <Route path='/jewelery' element={<JeweleryPage />} />
           <Route path='/electronics' element={<ElectronicsPage />} />
+          <Route path="/product/:id" element={<ProductDescriptionPage />} />
         </Routes>
       </Router>
     </Provider>

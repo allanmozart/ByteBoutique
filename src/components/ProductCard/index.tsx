@@ -27,6 +27,7 @@ function ProductCard() {
   return (
     <CardsContainer>
       {items.map((item) => (
+        <Link to={`/product/${item.id}`}>
         <Card key={item.id}>
           <ImgCard src={item.image} alt={item.image} />
           <Price>{item.price}€</Price>
@@ -44,6 +45,7 @@ function ProductCard() {
             Add To Cart
           </AddToCart>
         </Card>
+        </Link>
       ))}
     </CardsContainer>
   );
