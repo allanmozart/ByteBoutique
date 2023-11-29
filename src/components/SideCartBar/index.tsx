@@ -1,7 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart } from '../../store/cartSlice';
+import { removeFromCart, resetCart } from '../../store/cartSlice';
 import { RootState } from '../../store/store';
-import { CloseButton, SidebarContainer, SidebarContent } from './style';
+import {
+  CartItems,
+  CloseButton,
+  RemoveBtn,
+  ResetBtn,
+  SidebarContainer,
+  SidebarContent,
+  Total,
+} from './style';
 
 interface CartItem {
   id: number;
@@ -31,18 +39,21 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
       <SidebarContent>
         {/* Display cart items, add more products, delete from cart */}
         {cartItems.map((item) => (
-          <div key={item.id}>
-            <p>{item.name}</p>
+          <CartItems key={item.id}>
+            <p>
+              {item.name}
+              <RemoveBtn onClick={() => dispatch(removeFromCart(item.id))}>
+                X
+              </RemoveBtn>
+            </p>
             <p>Quantity: {item.quantity}</p>
-            <button onClick={() => dispatch(removeFromCart(item.id))}>
-              Remove Item
-            </button>
-          </div>
+          </CartItems>
         ))}
         {/* Option to add more products */}
       </SidebarContent>
 
-      <div>Total: ${calculateTotal(cartItems).toFixed(2)}</div>
+      <Total>Total: {calculateTotal(cartItems).toFixed(2)}€</Total>
+      <ResetBtn onClick={() => dispatch(resetCart())}>Delete All</ResetBtn>
     </SidebarContainer>
   );
 };
