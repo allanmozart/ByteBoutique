@@ -4,18 +4,22 @@ import MensClothingPage from './pages/MensClothing';
 import WomensClothingPage from './pages/WomensClothing';
 import JeweleryPage from './pages/JeweleryPage';
 import ElectronicsPage from './pages/ElectronicsPage';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path="/men's-clothing" element={<MensClothingPage />} />
-        <Route path="/women's-clothing" element={<WomensClothingPage />} />
-        <Route path='/jewelery' element={<JeweleryPage />} />
-        <Route path='/electronics' element={<ElectronicsPage />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path="/men's-clothing" element={<MensClothingPage />} />
+          <Route path="/women's-clothing" element={<WomensClothingPage />} />
+          <Route path='/jewelery' element={<JeweleryPage />} />
+          <Route path='/electronics' element={<ElectronicsPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
