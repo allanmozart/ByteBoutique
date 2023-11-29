@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProductPageDisplay = styled.div`
   display: flex;
@@ -20,7 +19,7 @@ export const ProductImage = styled.img`
   /* box-shadow: 0 0 30px 10px #888888; */
   padding: 20px;
   border: #2e1a12 solid 20px;
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 1);
 `;
 
 export const ProductDescription = styled.div`
@@ -33,7 +32,7 @@ export const ProductDescription = styled.div`
   /* border: 2px green solid; */
 `;
 
-export const AddToCartBtn = styled(Link)`
+export const AddToCartBtn = styled.button`
   display: inline-flex;
   width: 200px;
   height: 50px;
