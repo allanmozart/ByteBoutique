@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import { CardsContainer, AddToCart, Card, ImgCard, Price } from './style';
 import { getCategoryProducts } from '../../api/API_PATH';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/cartSlice';
 
 interface Product {
   id: number;
   title: string;
-  price: string;
+  price: number;
   image: string;
 }
 
 function ProductCard() {
+  const dispatch = useDispatch();
   const [items, setItems] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -27,10 +29,21 @@ function ProductCard() {
       {items.map((item) => (
         <Link to={`/product/${item.id}`}>
         <Card key={item.id}>
-          {/* <CardTitle>{item.title}</CardTitle> */}
           <ImgCard src={item.image} alt={item.image} />
           <Price>{item.price}€</Price>
-          <AddToCart>Add To Cart</AddToCart>
+          <AddToCart
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  id: `${item.id}`,
+                  name: `${item.title}`,
+                  price: `${item.price}`,
+                })
+              )
+            }
+          >
+            Add To Cart
+          </AddToCart>
         </Card>
         </Link>
       ))}

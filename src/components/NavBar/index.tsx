@@ -13,6 +13,7 @@ import {
 } from './style';
 import { useEffect, useState } from 'react';
 import { getAllCategories } from '../../api/API_PATH';
+import Sidebar from '../SideCartBar';
 
 interface Product {
   id: number;
@@ -21,6 +22,7 @@ interface Product {
 
 export default function NavBar() {
   const [items, setItems] = useState<Product[]>([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +31,15 @@ export default function NavBar() {
 
     fetchData();
   }, []);
+
+  const handleOpenSidebar = () => {
+    setIsSidebarOpen(true);
+  };
+
+  const handleCloseSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <>
       <StyledNavBar>
@@ -46,9 +57,13 @@ export default function NavBar() {
         </CategoriesContainer>
         <RightSideContainer>
           <ModalSignIn />
-          <CartLogo />
+          <CartLogo
+            onClick={isSidebarOpen ? handleCloseSidebar : handleOpenSidebar}
+          />
         </RightSideContainer>
       </StyledNavBar>
+
+      {isSidebarOpen && <Sidebar onClose={handleCloseSidebar} />}
     </>
   );
 }

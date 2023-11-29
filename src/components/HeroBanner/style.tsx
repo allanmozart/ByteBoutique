@@ -51,5 +51,5 @@ export const DiscoverMoreButton = styled(Link)`
 `;
 
 export const HeroImage = styled.img`
-  max-height: 400px;
+  max-height: 350px;
 `;

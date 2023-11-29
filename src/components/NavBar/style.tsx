@@ -58,12 +58,12 @@ export const RightSideContainer = styled.div`
 
 export const CartLogo = styled.image`
   background-position: 50% 50%;
-  width: 20%;
-  height: 80%;
+  width: auto;
   background-image: url('src/assets/cartlogo.png');
   background-size: contain;
   background-repeat: no-repeat;
   padding: 12px;
+  border-radius: 50px;
 
   &:hover {
     cursor: pointer;
