@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 // import { useParams } from "react-router";
 import { getProduct } from "../../api/API_PATH";
-import { ProductPageDisplay, ProductImage, ProductImgContainer, ProductDescription, AddToCartBtn } from "./style";
+import {
+  ProductPageDisplay,
+  ProductImage,
+  ProductImgContainer,
+  ProductDescription,
+  AddToCartBtn,
+} from "./style";
 
 interface ProductDetails {
   id: string;
@@ -39,6 +45,17 @@ function ProductDetailsDisplay() {
             <h1>{product.title}</h1>
             <h3>Product Price: {product.price}€</h3>
             <p>Product Description: {product.description}</p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <p>Rate: {product.rating.rate}/5</p>
+              <span className="material-symbols-outlined">star_rate_half</span>
+            </div>
+            <p>{product.rating.count} Reviews</p>
             <AddToCartBtn to="/cart">Add to Cart</AddToCartBtn>
           </ProductDescription>
         </ProductPageDisplay>

@@ -25,7 +25,7 @@ export const ProductImage = styled.img`
 
 export const ProductDescription = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 50%;
   height: 0;
   margin-top: 20px;
