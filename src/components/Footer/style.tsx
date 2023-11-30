@@ -9,7 +9,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const GithubLink = styled.button`
-  background-image: url('src/assets/github-no-bg.png');
+  background-image: url('/src/assets/github-no-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #fefefe;

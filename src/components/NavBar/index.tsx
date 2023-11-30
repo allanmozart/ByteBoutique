@@ -7,9 +7,9 @@ import {
   CartLogo,
   CategoriesButton,
   CategoriesContainer,
-  ImageLogo,
+  // ImageLogo,
   RightSideContainer,
-  // StyledLogo,
+  StyledLogo,
   StyledNavBar,
 } from "./style";
 import { useEffect, useState } from "react";
@@ -42,16 +42,13 @@ export default function NavBar() {
     setIsSidebarOpen(false);
   };
 
-  function getLogo(): string {
-    const logoImage = "logo.png";
-    return logoImage;
-  }
-
   return (
     <>
       <StyledNavBar>
-        {/* <StyledLogo href='/' /> */}
-          <ImageLogo id="image-logo" src={getLogo()}/>
+        <StyledLogo href='/' />
+        {/* <a href='/'>
+          <ImageLogo id="image-logo" src={"/logo.png"} alt="image"/>
+        </a> */}
         <CategoriesContainer>
           {/* {items.map((item) => ( */}
           <CategoriesButton>
