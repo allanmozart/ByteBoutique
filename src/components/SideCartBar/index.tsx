@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, resetCart } from '../../store/cartSlice';
-import { RootState } from '../../store/store';
+import { RootState } from '../../store/reducers';
 import {
   CartItems,
   CloseButton,

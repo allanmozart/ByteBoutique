@@ -1,9 +1,10 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   signOut,
   Auth as FirebaseAuth,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { auth, googleProvider } from '../../config/firebase.js';
 import {
@@ -14,13 +15,34 @@ import {
   LogoutBtn,
   LogoutContainer,
   SignInBtn,
+  ToggleSignUp,
 } from './style.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/reducers.js';
+import { clearUser, setUser } from '../../store/authSlice.js';
 
 interface AuthProps {}
 
 const Auth: React.FC<AuthProps> = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [isSignUp, setIsSignUp] = useState(false);
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.auth.user);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth as FirebaseAuth, (user) => {
+      if (user) {
+        dispatch(setUser(user));
+      } else {
+        dispatch(clearUser());
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [dispatch]);
 
   const signIn = async () => {
     try {
@@ -58,34 +80,55 @@ const Auth: React.FC<AuthProps> = () => {
     setPassword(e.target.value);
   };
 
+  const toggleSignUp = () => {
+    setIsSignUp(!isSignUp);
+  };
+
   return (
     <AuthContainer>
-      <Inputs>
-        <h3>Sign In</h3>
-        <input
-          style={{ backgroundColor: '#fefefe' }}
-          placeholder='Email...'
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          style={{ backgroundColor: '#fefefe' }}
-          placeholder='Password...'
-          type='password'
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <SignInBtn onClick={signIn}>Sign In</SignInBtn>
-      </Inputs>
-      <GoogleSignInContainer>
-        <GoogleSignInBtn onClick={signInWithGoogle}>
-          Sign In with Google
-        </GoogleSignInBtn>
-      </GoogleSignInContainer>
-      <LogoutContainer>
-        <LogoutBtn onClick={logOut}>Logout</LogoutBtn>
-      </LogoutContainer>
+      {user ? (
+        <LogoutContainer>
+          <p>Hello, {user.email}</p>
+          <LogoutBtn onClick={logOut}>Logout</LogoutBtn>
+        </LogoutContainer>
+      ) : (
+        <>
+          <Inputs>
+            <h3>{isSignUp ? 'Sign Up' : 'Sign In'}</h3>
+            <input
+              style={{ backgroundColor: '#fefefe' }}
+              placeholder='Email...'
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <input
+              style={{ backgroundColor: '#fefefe' }}
+              placeholder='Password...'
+              type='password'
+              value={password}
+              onChange={handlePasswordChange}
+            />
+            <SignInBtn onClick={isSignUp ? signIn : signInWithGoogle}>
+              {isSignUp ? 'Sign Up' : 'Sign In'}
+            </SignInBtn>
+          </Inputs>
+          <GoogleSignInContainer>
+            <GoogleSignInBtn onClick={signInWithGoogle}>
+              Sign In with Google
+            </GoogleSignInBtn>
+          </GoogleSignInContainer>
+          <p>
+            {isSignUp
+              ? 'Already have an account?'
+              : "Don't have an account? Sign up now!"}
+            <ToggleSignUp onClick={toggleSignUp}>
+              {isSignUp ? 'Sign In' : 'Sign Up'}
+            </ToggleSignUp>
+          </p>
+        </>
+      )}
     </AuthContainer>
   );
 };
+
 export default Auth;
