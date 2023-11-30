@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
       <CloseButton onClick={onClose}>Close</CloseButton>
       <SidebarContent>
         {user && <p>Shopping Cart of {user.email}</p>}
-        {/* Display cart items, add more products, delete from cart */}
+
         {cartItems.map((item) => (
           <CartItems key={item.id}>
             <p>
@@ -51,7 +51,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
             <p>Quantity: {item.quantity}</p>
           </CartItems>
         ))}
-        {/* Option to add more products */}
       </SidebarContent>
 
       <Total>Total: {calculateTotal(cartItems).toFixed(2)}€</Total>

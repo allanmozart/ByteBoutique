@@ -62,17 +62,7 @@ const ProductDetailsDisplay: React.FC = () => {
             </Rating>
             <p>{product.rating.count} Reviews</p>
             <h3>{product.price}€</h3>
-            <AddToCartBtn
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    id: `${product.id}`,
-                    name: `${product.title}`,
-                    price: `${product.price}`,
-                  })
-                )
-              }
-            >
+            <AddToCartBtn onClick={() => dispatch(addToCart(product))}>
               <b>Add to Cart</b>
             </AddToCartBtn>
           </ProductDescription>
