@@ -33,7 +33,7 @@ const ProductDetailsDisplay: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const fetchedProduct = await getProduct(productId);
+        const fetchedProduct = await getProduct(productId ? productId : '');
         setProduct(fetchedProduct);
       } catch (error) {
         console.error('Error fetching product:', error);
