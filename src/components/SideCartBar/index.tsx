@@ -24,6 +24,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
 
   const calculateTotal = (items: CartItem[]) => {
@@ -37,6 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
     <SidebarContainer isOpen={true}>
       <CloseButton onClick={onClose}>Close</CloseButton>
       <SidebarContent>
+        {user && <p>Shopping Cart of {user.email}</p>}
         {/* Display cart items, add more products, delete from cart */}
         {cartItems.map((item) => (
           <CartItems key={item.id}>

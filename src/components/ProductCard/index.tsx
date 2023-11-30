@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CardsContainer, AddToCart, Card, ImgCard, Price } from './style';
 import { getCategoryProducts } from '../../api/API_PATH';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 
 interface Product {
@@ -12,6 +12,9 @@ interface Product {
 }
 
 function ProductCard() {
+  const { priceUpFilter, priceDownFilter } = useSelector(
+    (state) => state.filter
+  );
   const dispatch = useDispatch();
   const [items, setItems] = useState<Product[]>([]);
 
@@ -24,9 +27,22 @@ function ProductCard() {
     fetchData();
   }, []);
 
+  const filterItems = () => {
+    let filteredItems = items.slice();
+
+    if (priceUpFilter) {
+      filteredItems = filteredItems.sort((a, b) => a.price - b.price);
+    }
+    if (priceDownFilter) {
+      filteredItems = filteredItems.sort((a, b) => b.price - a.price);
+    }
+
+    return filteredItems;
+  };
+
   return (
     <CardsContainer>
-      {items.map((item) => (
+      {filterItems().map((item) => (
         <Card key={item.id}>
           <a href={`/product/${item.id}`}>
             <ImgCard src={item.image} alt={item.title} />
