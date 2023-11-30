@@ -16,7 +16,6 @@ export const ProductImage = styled.img`
   display: flex;
   height: 60vh;
   margin-left: 50px;
-  /* box-shadow: 0 0 30px 10px #888888; */
   padding: 20px;
   border: #2e1a12 solid 20px;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 1);
@@ -29,24 +28,20 @@ export const ProductDescription = styled.div`
   height: 0;
   margin-top: 20px;
   margin-left: 100px;
-  /* border: 2px green solid; */
 `;
 
 export const AddToCartBtn = styled.button`
-  display: inline-flex;
   width: 200px;
-  height: 50px;
-  position: fixed;
-  top: 76%;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
   border-radius: 5px;
   background: #fdca40;
   border: none;
   color: black;
+  cursor: pointer;
+`;
 
-  &:hover {
-    cursor: pointer;
-  }
+export const Rating = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
