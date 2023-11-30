@@ -7,12 +7,13 @@ import {
   ProductImgContainer,
   ProductDescription,
   AddToCartBtn,
+  Rating,
 } from './style';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 
 interface ProductDetails {
-  id: string;
+  id: number;
   title: string;
   price: number;
   description: string;
@@ -34,7 +35,6 @@ const ProductDetailsDisplay: React.FC = () => {
       try {
         const fetchedProduct = await getProduct(productId);
         setProduct(fetchedProduct);
-        console.log('Fetched Product:', fetchedProduct);
       } catch (error) {
         console.error('Error fetching product:', error);
       }
@@ -57,16 +57,10 @@ const ProductDetailsDisplay: React.FC = () => {
             <h1>{product.title}</h1>
             <h3>Product Price: {product.price}€</h3>
             <p>Product Description: {product.description}</p>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
-            >
+            <Rating>
               <p>Rate: {product.rating.rate}/5</p>
               <span className='material-symbols-outlined'>star_rate_half</span>
-            </div>
+            </Rating>
             <p>{product.rating.count} Reviews</p>
             <AddToCartBtn
               onClick={() =>
@@ -79,7 +73,7 @@ const ProductDetailsDisplay: React.FC = () => {
                 )
               }
             >
-              Add to Cart
+              <b>Add to Cart</b>
             </AddToCartBtn>
           </ProductDescription>
         </ProductPageDisplay>
