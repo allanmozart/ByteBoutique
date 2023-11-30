@@ -4,13 +4,13 @@ import Auth from '../Auth/auth';
 import { Modal, OpenModal, User } from './style';
 import { CloseButton } from '../Auth/style';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/reducers';
+import { authReducer } from '../../store/authSlice';
 
 interface ModalSignInProps {}
 
 const ModalSignIn: React.FC<ModalSignInProps> = () => {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user = useSelector((state: authReducer) => state.auth.user);
 
   const openSignInModal = () => {
     setIsSignInModalOpen(true);
