@@ -18,7 +18,3 @@ export const Container = styled.div`
   justify-content: center;
   gap: 10px;
 `;
-
-export const Filter = styled.button`
-  width: 10%;
-`;

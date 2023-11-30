@@ -55,24 +55,14 @@ const ProductDetailsDisplay: React.FC = () => {
           </ProductImgContainer>
           <ProductDescription>
             <h1>{product.title}</h1>
-            <h3>Product Price: {product.price}€</h3>
-            <p>Product Description: {product.description}</p>
+            <p>{product.description}</p>
             <Rating>
               <p>Rate: {product.rating.rate}/5</p>
               <span className='material-symbols-outlined'>star_rate_half</span>
             </Rating>
             <p>{product.rating.count} Reviews</p>
-            <AddToCartBtn
-              onClick={() =>
-                dispatch(
-                  addToCart({
-                    id: `${product.id}`,
-                    name: `${product.title}`,
-                    price: `${product.price}`,
-                  })
-                )
-              }
-            >
+            <h3>{product.price}€</h3>
+            <AddToCartBtn onClick={() => dispatch(addToCart(product))}>
               <b>Add to Cart</b>
             </AddToCartBtn>
           </ProductDescription>

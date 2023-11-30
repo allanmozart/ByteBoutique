@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, resetCart } from '../../store/cartSlice';
-import { RootState } from '../../store/store';
+import { RootState } from '../../store/reducers';
 import {
   CartItems,
   CloseButton,
@@ -24,6 +24,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
 
   const calculateTotal = (items: CartItem[]) => {
@@ -37,7 +38,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
     <SidebarContainer isOpen={true}>
       <CloseButton onClick={onClose}>Close</CloseButton>
       <SidebarContent>
-        {/* Display cart items, add more products, delete from cart */}
+        {user && <p>Shopping Cart of {user.email}</p>}
+
         {cartItems.map((item) => (
           <CartItems key={item.id}>
             <p>
@@ -49,7 +51,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
             <p>Quantity: {item.quantity}</p>
           </CartItems>
         ))}
-        {/* Option to add more products */}
       </SidebarContent>
 
       <Total>Total: {calculateTotal(cartItems).toFixed(2)}€</Total>

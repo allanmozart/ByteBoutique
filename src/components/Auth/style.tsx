@@ -52,15 +52,20 @@ export const LogoutBtn = styled.button`
 `;
 
 export const CloseButton = styled.button`
+  background-color: gray;
   color: black;
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #fff;
   border: none;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+  border: 1px solid black;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 export const AuthContainer = styled.div`
@@ -78,4 +83,20 @@ export const GoogleSignInContainer = styled.div`
 
 export const LogoutContainer = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+`;
+
+export const ToggleSignUp = styled.button`
+  background-color: #fcd40a;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
 `;

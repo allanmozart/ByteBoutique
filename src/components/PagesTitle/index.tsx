@@ -8,6 +8,7 @@ const StyledTitle = styled.h1`
   width: 90%;
   height: 10%;
   align-items: center;
+  text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
 `;
 
 function Title() {

@@ -1,13 +1,14 @@
+import Filter from '../Filter';
 import Title from '../PagesTitle';
 import ProductCard from '../ProductCard';
-import { Container, Display, Filter } from './style';
+import { Container, Display } from './style';
 
 function PagesDisplay() {
   return (
     <Display>
       <Title />
       <Container>
-        <Filter>Filter/Sort By...</Filter>
+        <Filter />
         <ProductCard />
       </Container>
     </Display>
