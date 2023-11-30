@@ -5,6 +5,7 @@ export const CardsContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   width: 80%;
   height: 70%;
   gap: 10px;
@@ -17,20 +18,17 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 200px;
   height: 400px;
   margin: 10px 0;
   padding: 5px;
 `;
 
-export const CardTitle = styled.h4`
-  width: 100%;
-`;
-
 export const ImgCard = styled.img`
-  width: 70%;
-  height: 70%;
-  object-fit: scale-down;
+  height: 30vh;
+  max-width: 80%;
+  object-fit: contain;
   margin: auto;
 
   &:hover {

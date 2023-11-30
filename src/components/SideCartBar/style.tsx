@@ -23,18 +23,22 @@ export const CartItems = styled.div``;
 
 export const RemoveBtn = styled.button`
   display: flex;
-  background-color: red;
+  background-color: gray;
   align-items: center;
   justify-content: center;
   width: 5px;
   height: 5px;
-  color: black;
+  color: white;
   padding: 10px;
   border: none;
   cursor: pointer;
 
+  border-radius: 5px;
+  box-shadow: 2px 2px;
+
   &:hover {
-    color: white;
+    color: black;
+    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
   }
 `;
 
@@ -61,4 +65,9 @@ export const ResetBtn = styled.button`
   cursor: pointer;
   width: 20%;
   border-radius: 5px;
+
+  &:hover {
+    color: white;
+    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
+  }
 `;

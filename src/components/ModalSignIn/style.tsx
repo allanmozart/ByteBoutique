@@ -26,10 +26,10 @@ export const Modal = styled.div<ModalProps>`
   z-index: 1;
 `;
 
-export const DarkerBackGround = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #535353;
-  z-index: 5;
+export const User = styled.div`
+  background-color: #fcd40a;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 2px;
 `;
