@@ -1,13 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import promotionReducer from "./promotion/promotion";
+import cartReducer from "./cartSlice";
 
-const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-  },
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const rootReducer = combineReducers({
+  promotion: promotionReducer,
+  cart: cartReducer,
 });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = configureStore({
+  reducer: persistedReducer,
+});
 
 export default store;
