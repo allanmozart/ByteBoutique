@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
 
 interface ProductDetails {
-  id: string;
+  id: number;
   title: string;
   price: number;
   description: string;
@@ -32,7 +32,7 @@ const ProductDetailsDisplay: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const fetchedProduct = await getProduct(productId);
+        const fetchedProduct = await getProduct(productId ? productId : '');
         setProduct(fetchedProduct);
         console.log('Fetched Product:', fetchedProduct);
       } catch (error) {
