@@ -1,20 +1,20 @@
-import MensClothingDropdown from "../DropDowns/MensClothingDropDown";
-import WomensClothingDropdown from "../DropDowns/WomensClothingDropDown";
-import JeweleryDropdown from "../DropDowns/JeweleryDropDown";
-import ElectronicsDropdown from "../DropDowns/ElectronicsDropDown";
-import ModalSignIn from "../ModalSignIn";
+import MensClothingDropdown from '../DropDowns/MensClothingDropDown';
+import WomensClothingDropdown from '../DropDowns/WomensClothingDropDown';
+import JeweleryDropdown from '../DropDowns/JeweleryDropDown';
+import ElectronicsDropdown from '../DropDowns/ElectronicsDropDown';
+import ModalSignIn from '../ModalSignIn';
 import {
   CartLogo,
   CategoriesButton,
   CategoriesContainer,
-  // ImageLogo,
   RightSideContainer,
   StyledLogo,
   StyledNavBar,
-} from "./style";
-import { useEffect, useState } from "react";
-import { getAllCategories } from "../../api/API_PATH";
-import Sidebar from "../SideCartBar";
+} from './style';
+import { useEffect, useState } from 'react';
+import { getAllCategories } from '../../api/API_PATH';
+import Sidebar from '../SideCartBar';
+import MobileDropDown from '../DropDowns/Mobile';
 
 interface Product {
   id: number;
@@ -45,20 +45,15 @@ export default function NavBar() {
   return (
     <>
       <StyledNavBar>
+        <MobileDropDown />
         <StyledLogo href='/' />
-        {/* <a href='/'>
-          <ImageLogo id="image-logo" src={"/logo.png"} alt="image"/>
-        </a> */}
         <CategoriesContainer>
-          {/* {items.map((item) => ( */}
           <CategoriesButton>
-            {/* {items} */}
             <MensClothingDropdown />
             <WomensClothingDropdown />
             <JeweleryDropdown />
             <ElectronicsDropdown />
           </CategoriesButton>
-          {/* ))} */}
         </CategoriesContainer>
         <RightSideContainer>
           <ModalSignIn />

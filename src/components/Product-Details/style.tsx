@@ -17,7 +17,8 @@ export const ProductImage = styled.img`
   height: 60vh;
   margin-left: 50px;
   padding: 20px;
-  border: #2e1a12 solid 20px;
+  border: #d4af47 solid 20px;
+  border-radius: 5px;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 1);
 `;
 

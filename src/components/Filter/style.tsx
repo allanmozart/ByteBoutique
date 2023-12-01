@@ -6,6 +6,10 @@ export const Container = styled.div`
   align-items: center;
   height: 70%;
   width: 10%;
+  @media (max-width: 767px) {
+    width: 15%;
+    font-size: small;
+  }
 `;
 
 export const Title = styled.h4`

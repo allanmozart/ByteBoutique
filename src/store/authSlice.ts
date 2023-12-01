@@ -3,10 +3,12 @@ import { User } from 'firebase/auth';
 
 interface AuthState {
   user: User | null;
+  auth: boolean;
 }
 
 const initialState: AuthState = {
   user: null,
+  auth: false,
 };
 
 const authSlice = createSlice({

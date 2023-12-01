@@ -16,6 +16,21 @@ export async function getCategoryProducts(category: string) {
   }
 }
 
+export async function getAllProducts() {
+  const config = {
+    method: 'get',
+    url: `${BASE_URL}${PATH.products}`,
+    headers: {},
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export async function getAllCategories() {
   const config = {
     method: 'get',
