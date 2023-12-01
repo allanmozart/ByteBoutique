@@ -30,7 +30,9 @@ const MobileDropDown: React.FC = () => {
       </DropDownBtn>
       <DropdownContent isVisible={isDropdownVisible}>
         {items.map((item) => (
-          <DropdownItem href={`/${item}`}>{item}</DropdownItem>
+          <DropdownItem href={`/${item.split(' ').join('-')}`}>
+            {item}
+          </DropdownItem>
         ))}
       </DropdownContent>
     </MobileDropDownContainer>
