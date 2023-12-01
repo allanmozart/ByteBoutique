@@ -24,4 +24,6 @@ const filterSlice = createSlice({
 });
 
 export const { setPriceUpFilter, setPriceDownFilter } = filterSlice.actions;
-export default filterSlice.reducer;
+
+const filterReducer = filterSlice.reducer
+export default filterReducer;
