@@ -5,12 +5,14 @@ import { StyledProductPage } from './style';
 
 function ProductDescriptionPage() {
   return (
-    <StyledProductPage>
+    <>
       <NavBar />
-      <Page>
-        <ProductDetailsDisplay />
-      </Page>
-    </StyledProductPage>
+      <StyledProductPage>
+        <Page>
+          <ProductDetailsDisplay />
+        </Page>
+      </StyledProductPage>
+    </>
   );
 }
 

@@ -8,7 +8,7 @@ export const CarouselContainer = styled.div`
   margin: auto;
 
   @media (max-width: 767px) {
-    height: 20%;
+    height: 30%;
     margin-top: 0;
   }
 `;

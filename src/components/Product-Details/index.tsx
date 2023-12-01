@@ -8,6 +8,11 @@ import {
   ProductDescription,
   AddToCartBtn,
   Rating,
+  ProductTitle,
+  ProductDescriptionContainer,
+  Price,
+  PriceAddContainer,
+  ProductText,
 } from './style';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/cartSlice';
@@ -50,19 +55,25 @@ const ProductDetailsDisplay: React.FC = () => {
               alt={product.title}
             ></ProductImage>
           </ProductImgContainer>
-          <ProductDescription>
-            <h1>{product.title}</h1>
-            <p>{product.description}</p>
+          <ProductDescriptionContainer>
+            <ProductTitle>{product.title}</ProductTitle>
+            <ProductText>{product.description}</ProductText>
             <Rating>
-              <p>Rate: {product.rating.rate}/5</p>
+              <ProductDescription>
+                Rating: {product.rating.rate}/5
+              </ProductDescription>
               <span className='material-symbols-outlined'>star_rate_half</span>
             </Rating>
-            <p>{product.rating.count} Reviews</p>
-            <h3>{product.price}€</h3>
-            <AddToCartBtn onClick={() => dispatch(addToCart(product))}>
-              <b>Add to Cart</b>
-            </AddToCartBtn>
-          </ProductDescription>
+            <ProductDescription>
+              {product.rating.count} Reviews
+            </ProductDescription>
+            <PriceAddContainer>
+              <Price>{product.price}€</Price>
+              <AddToCartBtn onClick={() => dispatch(addToCart(product))}>
+                <b>Add to Cart</b>
+              </AddToCartBtn>
+            </PriceAddContainer>
+          </ProductDescriptionContainer>
         </ProductPageDisplay>
       )}
     </>

@@ -7,6 +7,7 @@ export const Display = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0px;
+  margin: auto;
 `;
 
 export const Container = styled.div`
@@ -17,4 +18,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;

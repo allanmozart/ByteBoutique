@@ -7,8 +7,10 @@ export const Container = styled.div`
   height: 70%;
   width: 10%;
   @media (max-width: 767px) {
-    width: 15%;
     font-size: small;
+    flex-direction: row;
+    width: 50%;
+    height: 5vh;
   }
 `;
 

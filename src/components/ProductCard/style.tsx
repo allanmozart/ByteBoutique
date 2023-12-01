@@ -9,12 +9,12 @@ export const CardsContainer = styled.div`
   width: 80%;
   height: 70%;
   gap: 10px;
-  overflow-y: auto;
+  overflow: auto;
 
   @media (max-width: 767px) {
     margin-top: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100vw;
   }
 `;
 
@@ -32,7 +32,9 @@ export const Card = styled.div`
 
   @media (max-width: 767px) {
     height: 20vh;
+    width: 90%;
     margin-top: 0px;
+    justify-content: space-around;
   }
 `;
 
@@ -67,5 +69,9 @@ export const AddToCart = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    width: auto;
   }
 `;
