@@ -6,6 +6,11 @@ export const CarouselContainer = styled.div`
   justify-content: space-around;
   max-width: 80%;
   margin: auto;
+
+  @media (max-width: 767px) {
+    height: 20%;
+    margin-top: 0;
+  }
 `;
 
 export const ProductContainer = styled.div`

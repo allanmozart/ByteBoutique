@@ -10,7 +10,7 @@ interface ModalSignInProps {}
 
 const ModalSignIn: React.FC<ModalSignInProps> = () => {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
-  const user = useSelector((state: authReducer) => state.auth.user);
+  const user = useSelector((state: typeof authReducer) => state.auth.user);
 
   const openSignInModal = () => {
     setIsSignInModalOpen(true);
@@ -23,7 +23,7 @@ const ModalSignIn: React.FC<ModalSignInProps> = () => {
   return (
     <>
       <OpenModal onClick={openSignInModal}>
-        {user ? <User>Hello, {user.email}</User> : <UserLogo />}
+        {user ? <User>Hello</User> : <UserLogo />}
       </OpenModal>
 
       <Modal isOpen={isSignInModalOpen}>

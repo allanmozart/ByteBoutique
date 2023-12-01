@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { getProduct } from '../../api/API_PATH';
 import {
@@ -19,6 +19,8 @@ interface ProductDetails {
   description: string;
   category: string;
   image: string;
+  name: string;
+  quantity: number;
   rating: {
     rate: number;
     count: number;
@@ -32,12 +34,7 @@ const ProductDetailsDisplay: React.FC = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      try {
-        const fetchedProduct = await getProduct(productId ? productId : '');
-        setProduct(fetchedProduct);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
+      setProduct(await getProduct(productId ? productId : ''));
     };
 
     fetchProduct();

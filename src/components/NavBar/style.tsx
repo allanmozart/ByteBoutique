@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledNavBar = styled.div`
   display: flex;
@@ -8,6 +8,13 @@ export const StyledNavBar = styled.div`
   align-items: center;
   justify-content: space-around;
   gap: 20px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 5px;
+  }
 `;
 
 export const StyledLogo = styled.a`
@@ -22,25 +29,20 @@ export const StyledLogo = styled.a`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    width: 25%;
+  }
 `;
-
-// export const ImageLogo = styled.img`
-//   background-position: 50% 50%;
-//   width: 200px;
-//   height: auto;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   padding: 10px;
-
-//   &:hover {
-//     cursor: pointer;
-//   }
-// `;
 
 export const CategoriesContainer = styled.div`
   display: flex;
   gap: 10px;
   width: 40%;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const CategoriesButton = styled.button`
@@ -72,7 +74,7 @@ export const RightSideContainer = styled.div`
 export const CartLogo = styled.image`
   background-position: 50% 50%;
   width: auto;
-  background-image: url("/src/assets/cartlogo.png");
+  background-image: url('/src/assets/cartlogo.png');
   background-size: contain;
   background-repeat: no-repeat;
   padding: 12px;
@@ -80,5 +82,8 @@ export const CartLogo = styled.image`
 
   &:hover {
     cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    margin-right: 30px;
   }
 `;

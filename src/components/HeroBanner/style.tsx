@@ -9,12 +9,10 @@ export const HeroContainer = styled.div`
   justify-content: space-around;
   align-items: center;
 
-  /*
-   border: 1px solid blue;
-  width: 80%;
-  height: 45%;
-  margin: auto;
-  */
+  @media (max-width: 767px) {
+    height: 40%;
+    margin-top: 0;
+  }
 `;
 
 export const ShopNowButton = styled(Link)`
@@ -33,12 +31,15 @@ export const ShopNowButton = styled(Link)`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    width: 20%;
+  }
 `;
 
 export const DiscoverMoreButton = styled(Link)`
   display: inline-flex;
   padding: 13px 49px;
-  /* margin-left: 20px; */
   justify-content: center;
   align-items: center;
   border: none;
@@ -52,4 +53,7 @@ export const DiscoverMoreButton = styled(Link)`
 
 export const HeroImage = styled.img`
   max-height: 350px;
+  @media (max-width: 767px) {
+    width: 50%;
+  }
 `;

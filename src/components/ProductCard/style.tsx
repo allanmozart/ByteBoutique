@@ -10,6 +10,12 @@ export const CardsContainer = styled.div`
   height: 70%;
   gap: 10px;
   overflow-y: auto;
+
+  @media (max-width: 767px) {
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Card = styled.div`
@@ -23,6 +29,11 @@ export const Card = styled.div`
   height: 400px;
   margin: 10px 0;
   padding: 5px;
+
+  @media (max-width: 767px) {
+    height: 20vh;
+    margin-top: 0px;
+  }
 `;
 
 export const ImgCard = styled.img`
@@ -33,6 +44,11 @@ export const ImgCard = styled.img`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    height: 20vh;
+    margin-top: 0px;
   }
 `;
 

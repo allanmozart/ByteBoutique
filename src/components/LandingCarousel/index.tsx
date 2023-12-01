@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   CarouselContainer,
   ProductContainer,
@@ -7,6 +6,7 @@ import {
   ProductImage,
   Route,
 } from './style';
+import { getAllProducts } from '../../api/API_PATH';
 
 interface Product {
   id: number;
@@ -35,22 +35,13 @@ function Carousel(props: { autoScroll?: boolean }) {
 
     setInterval(() => {
       nextSlide();
-    }, 1000);
+    }, 5000);
   });
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
-        const response = await axios.get<Product[]>(
-          'https://fakestoreapi.com/products'
-        );
-
-        setProducts(response.data);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
+      setProducts(await getAllProducts());
     };
-
     fetchProducts();
   }, []);
 

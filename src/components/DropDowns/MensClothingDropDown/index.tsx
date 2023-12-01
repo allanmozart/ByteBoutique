@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import {
   Button,
   DropdownContainer,
   DropdownContent,
   DropdownItem,
 } from './style';
+import { getCategoryProducts } from '../../../api/API_PATH';
 
 interface Product {
   id: number;
@@ -18,14 +18,8 @@ const MensClothingDropdown: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get<Product[]>(
-          "https://fakestoreapi.com/products/category/men's clothing"
-        );
-        setItems(response.data.slice(0, 5));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      const mensClothingData = await getCategoryProducts("men's clothing");
+      setItems(mensClothingData.slice(0, 4));
     };
 
     fetchData();

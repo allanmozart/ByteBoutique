@@ -3,9 +3,15 @@ import styled from 'styled-components';
 export const FooterContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 15%;
+  height: 25%;
   justify-content: space-evenly;
   border: 1px solid #000;
+  margin: auto;
+
+  @media (max-width: 767px) {
+    height: 25%;
+    margin-bottom: 40px;
+  }
 `;
 
 export const GithubLink = styled.button`

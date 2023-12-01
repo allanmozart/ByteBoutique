@@ -18,8 +18,7 @@ import {
   ToggleSignUp,
 } from './style.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/reducers.js';
-import { clearUser, setUser } from '../../store/authSlice.js';
+import authReducer, { clearUser, setUser } from '../../store/authSlice.js';
 
 interface AuthProps {}
 
@@ -28,7 +27,7 @@ const Auth: React.FC<AuthProps> = () => {
   const [password, setPassword] = useState<string>('');
   const [isSignUp, setIsSignUp] = useState(false);
   const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user = useSelector((state: typeof authReducer) => state.auth.user);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth as FirebaseAuth, (user) => {
