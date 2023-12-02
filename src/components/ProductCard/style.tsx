@@ -7,14 +7,13 @@ export const CardsContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 70%;
+  height: 100vh;
   gap: 10px;
   overflow: auto;
 
   @media (max-width: 767px) {
     margin-top: 0;
     width: 100vw;
-    height: 100vh;
   }
 `;
 
@@ -23,11 +22,11 @@ export const Card = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 200px;
-  height: 400px;
-  margin: 10px 0;
+  height: 100vh;
+  margin: auto;
   padding: 5px;
 
   @media (max-width: 767px) {
@@ -40,7 +39,7 @@ export const Card = styled.div`
 `;
 
 export const ImgCard = styled.img`
-  height: 30vh;
+  height: 20vh;
   max-width: 80%;
   object-fit: contain;
   margin: auto;
