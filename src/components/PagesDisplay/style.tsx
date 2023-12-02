@@ -8,6 +8,7 @@ export const Display = styled.div`
   justify-content: space-between;
   margin-bottom: 0px;
   margin: auto;
+  overflow: auto;
 `;
 
 export const Container = styled.div`
@@ -21,5 +22,6 @@ export const Container = styled.div`
 
   @media (max-width: 767px) {
     flex-direction: column;
+    overflow: auto;
   }
 `;

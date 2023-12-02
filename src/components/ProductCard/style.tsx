@@ -14,6 +14,7 @@ export const CardsContainer = styled.div`
   @media (max-width: 767px) {
     margin-top: 0;
     width: 100vw;
+    height: 100vh;
   }
 `;
 
@@ -33,7 +34,8 @@ export const Card = styled.div`
     height: 20vh;
     width: 80%;
     margin-top: 0px;
-    justify-content: space-around;
+    margin-bottom: 20px;
+    justify-content: flex-start;
   }
 `;
 
