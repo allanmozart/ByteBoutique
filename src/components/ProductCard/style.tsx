@@ -13,7 +13,6 @@ export const CardsContainer = styled.div`
 
   @media (max-width: 767px) {
     margin-top: 0;
-    flex-direction: column;
     width: 100vw;
   }
 `;
@@ -32,7 +31,7 @@ export const Card = styled.div`
 
   @media (max-width: 767px) {
     height: 20vh;
-    width: 90%;
+    width: 80%;
     margin-top: 0px;
     justify-content: space-around;
   }
@@ -64,7 +63,7 @@ export const AddToCart = styled.button`
   border: none;
   color: black;
   width: 50%;
-  height: 8%;
+  height: 10%;
   border-radius: 5px;
 
   &:hover {
