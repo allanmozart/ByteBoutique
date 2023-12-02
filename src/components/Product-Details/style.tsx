@@ -44,7 +44,7 @@ export const ProductDescriptionContainer = styled.div`
   flex-direction: column;
   width: 50%;
   height: 0;
-  margin-top: 20px;
+  margin-top: 150px;
   margin-left: 100px;
 
   @media (max-width: 767px) {

@@ -5,18 +5,9 @@ import ProductDetailsDisplay from './index';
 import { getProduct } from '../../api/API_PATH';
 // import { addToCart } from '../../store/cartSlice';
 
-jest.mock('react-redux', () => ({
-  ...jest.requireActual('react-redux'),
-  useDispatch: jest.fn(),
-}));
-
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useParams: jest.fn(),
-}));
-
-jest.mock('../../api/API_PATH', () => ({
-  getProduct: jest.fn(),
 }));
 
 describe('ProductDetailsDisplay Component', () => {
