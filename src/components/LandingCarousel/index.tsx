@@ -73,7 +73,7 @@ function Carousel(props: { autoScroll?: boolean }) {
   };
 
   return (
-    <CarouselContainer>
+    <CarouselContainer id='carousel'>
       <button
         onClick={prevSlide}
         style={{
@@ -82,7 +82,7 @@ function Carousel(props: { autoScroll?: boolean }) {
           cursor: 'pointer',
         }}
       >
-        <img src='src/assets/arrow_left.png' alt='' />
+        <img src='src/assets/arrow_left.png' alt='left arrow button' />
       </button>
       {products.length > 0 && renderProducts()}
       <button
@@ -93,7 +93,7 @@ function Carousel(props: { autoScroll?: boolean }) {
           cursor: 'pointer',
         }}
       >
-        <img src='src/assets/arrow_right.png' alt='' />
+        <img src='src/assets/arrow_right.png' alt='right arrow button' />
       </button>
     </CarouselContainer>
   );

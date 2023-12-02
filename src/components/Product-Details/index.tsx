@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import { getProduct } from '../../api/API_PATH';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { getProduct } from "../../api/API_PATH";
 import {
   ProductPageDisplay,
   ProductImage,
@@ -13,9 +13,9 @@ import {
   Price,
   PriceAddContainer,
   ProductText,
-} from './style';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../store/cartSlice';
+} from "./style";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
 
 interface ProductDetails {
   id: number;
@@ -39,7 +39,7 @@ const ProductDetailsDisplay: React.FC = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      setProduct(await getProduct(productId ? productId : ''));
+      setProduct(await getProduct(productId ? productId : ""));
     };
 
     fetchProduct();
@@ -51,6 +51,7 @@ const ProductDetailsDisplay: React.FC = () => {
         <ProductPageDisplay>
           <ProductImgContainer>
             <ProductImage
+              data-testid="product-image"
               src={product.image}
               alt={product.title}
             ></ProductImage>
@@ -62,7 +63,7 @@ const ProductDetailsDisplay: React.FC = () => {
               <ProductDescription>
                 Rating: {product.rating.rate}/5
               </ProductDescription>
-              <span className='material-symbols-outlined'>star_rate_half</span>
+              <span className="material-symbols-outlined">star_rate_half</span>
             </Rating>
             <ProductDescription>
               {product.rating.count} Reviews
