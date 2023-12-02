@@ -2,13 +2,16 @@
   "name": "byteboutique",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://allanmozart.github.io/ByteBoutique",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && babel src -d lib",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@mdi/react": "^1.6.1",
@@ -17,6 +20,7 @@
     "@testing-library/react": "^14.1.2",
     "axios": "^1.6.2",
     "firebase": "^10.6.0",
+    "gh-pages": "^6.1.0",
     "jest": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
